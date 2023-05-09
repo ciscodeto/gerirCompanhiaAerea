@@ -61,6 +61,7 @@ void alterar_piloto(Piloto *vetPilot, int *totPilot) {
     printf("Digite o Registro do piloto: ");
     gets(registro);
     
+    // Verificar se este CPF existe no vetor:
     index = buscar_piloto(vetPilot, *totPilot, registro);
     
     if (index == -1) {

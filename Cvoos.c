@@ -28,8 +28,6 @@ void incluir_voo(Voo *vetVoo, int *totVoo) {
         if (buscar_voo(vetVoo, *totVoo, numero) != -1 ) {
             printf("\n* Este numero ja existe!*\n");
         } else {
-            printf("Digite o numero do voo: ");
-            gets(numero);
             printf("Digite a cidade Origem do voo: ");
             gets(cidadeOrigem);
             printf("Digite a cidade Destino do voo: ");
@@ -58,11 +56,12 @@ void alterar_voo(Voo *vetVoo, int *totVoo) {
     char LIXO[2];
     int index;
     
-    printf("\n_-_-Alterar Voo-_-_\n");
+    printf("\n_-_-Incluir Voo-_-_\n");
     
-    printf("Digite o Numero do Voo: ");
+    printf("Digite o Numero do voo: ");
     gets(numero);
     
+    // Verificar se este CPF existe no vetor:
     index = buscar_voo(vetVoo, *totVoo, numero);
     
     if (index == -1) {
@@ -92,7 +91,7 @@ void excluir_voo(Voo *vetVoo, int *totVoo) {
     
     printf("\n_-_-Excluir Voo-_-_\n");
     
-    printf("Digite o Numero do Voo: ");
+    printf("Digite o Numero do voo: ");
     gets(numero);
     
         index = buscar_voo(vetVoo, *totVoo, numero);
@@ -126,7 +125,7 @@ void listar_voo(Voo *vetVoo, int *totVoo) {
     index = buscar_voo(vetVoo, *totVoo, numero);
     
     if (index == -1) {
-        printf("\n* Este Voo nao existe!*\n");
+        printf("\n* Este Registro nao existe!*\n");
     } else {
         printf("\nNumero: %s / ", vetVoo[index].Numero);
         printf("Origem: %s / ", vetVoo[index].cidadeOrigem);
@@ -142,9 +141,9 @@ void listarTodos_voos(Voo *vetVoo, int *totVoo) {
     int i;
     
     if ((*totVoo) == 0) {
-        printf("\nNao existem Voos registrados!\n");
+        printf("\nNao existem voos registrados!\n");
     } else {
-        printf("\n_-_-Listar Todos Voos-_-_\n");
+        printf("\n_-_-Listar Todos Pilotos-_-_\n");
 
         for( i=0; i<(*totVoo); i++ ) {            
             printf("\nNumero: %s / ", vetVoo[i].Numero);
