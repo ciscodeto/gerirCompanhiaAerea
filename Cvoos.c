@@ -60,13 +60,13 @@ void alterar_voo(Voo *vetVoo, int *totVoo) {
     
     printf("\n_-_-Alterar Voo-_-_\n");
     
-    printf("Digite o Registro do piloto: ");
+    printf("Digite o Numero do Voo: ");
     gets(numero);
     
     index = buscar_voo(vetVoo, *totVoo, numero);
     
     if (index == -1) {
-        printf("\n* Este Registo nao existe!*\n");
+        printf("\n* Este Voo nao existe!*\n");
     } else {
         printf("Digite a cidade Origem do voo: ");
         gets(cidadeOrigem);
@@ -92,13 +92,13 @@ void excluir_voo(Voo *vetVoo, int *totVoo) {
     
     printf("\n_-_-Excluir Voo-_-_\n");
     
-    printf("Digite o Registro do piloto: ");
+    printf("Digite o Numero do Voo: ");
     gets(numero);
     
         index = buscar_voo(vetVoo, *totVoo, numero);
     
         if (index == -1) {
-            printf("\n* Este Registro nao existe!*\n");
+            printf("\n* Este Voo nao existe!*\n");
         } else {
             for(i=index; i < (*totVoo)-1 ; i++) {
                 strcpy(vetVoo[index].Numero, vetVoo[index+1].Numero);
@@ -126,7 +126,7 @@ void listar_voo(Voo *vetVoo, int *totVoo) {
     index = buscar_voo(vetVoo, *totVoo, numero);
     
     if (index == -1) {
-        printf("\n* Este Registro nao existe!*\n");
+        printf("\n* Este Voo nao existe!*\n");
     } else {
         printf("\nNumero: %s / ", vetVoo[index].Numero);
         printf("Origem: %s / ", vetVoo[index].cidadeOrigem);
@@ -142,9 +142,9 @@ void listarTodos_voos(Voo *vetVoo, int *totVoo) {
     int i;
     
     if ((*totVoo) == 0) {
-        printf("\nNao existem pilotos registrados!\n");
+        printf("\nNao existem Voos registrados!\n");
     } else {
-        printf("\n_-_-Listar Todos Pilotos-_-_\n");
+        printf("\n_-_-Listar Todos Voos-_-_\n");
 
         for( i=0; i<(*totVoo); i++ ) {            
             printf("\nNumero: %s / ", vetVoo[i].Numero);
