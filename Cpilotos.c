@@ -56,12 +56,11 @@ void alterar_piloto(Piloto *vetPilot, int *totPilot) {
     char LIXO[2];
     int index;
     
-    printf("\n_-_-Incluir Piloto-_-_\n");
+    printf("\n_-_-Alterar Piloto-_-_\n");
     
     printf("Digite o Registro do piloto: ");
     gets(registro);
     
-    // Verificar se este CPF existe no vetor:
     index = buscar_piloto(vetPilot, *totPilot, registro);
     
     if (index == -1) {
@@ -74,9 +73,9 @@ void alterar_piloto(Piloto *vetPilot, int *totPilot) {
         printf("Digite o email do piloto: ");
         gets(email);
 
-        strcpy(vetPilot[*totPilot].nome, nome);
-        vetPilot[*totPilot].horasDeVoo = horasDeVoo;
-        strcpy(vetPilot[*totPilot].email, email);
+        strcpy(vetPilot[index].nome, nome);
+        vetPilot[index].horasDeVoo = horasDeVoo;
+        strcpy(vetPilot[index].email, email);
 
         printf("\n* Cadastro do Piloto alterado com sucesso!\n");
     }
